@@ -24,5 +24,5 @@
     { "manufacturer": "Wyrd", "univers": "Malifaux", "faction": "Guild", "name": "PERDITA ORTEGA BOX SET", "priceDollars": 45, "numberOfMiniatures": 6, "strategyType": "Versatile", "theme": "Western, Cowboys", "updateDate": "15/03/2016"},
     
     { "manufacturer": "Corvus Belli", "univers": "Infinity", "faction": "Ariadna", "name": "USAriadna Ranger Force Sectorial Starter Pack", "priceDollars": 45, "numberOfMiniatures": 6, "strategyType": "Versatile", "theme": "Rangers", "updateDate": "15/03/2016"},
-    { "manufacturer": "Corvus Belli", "univers": "Infinity", "faction": "Ariadna", "name": "PanOceania Starter Pack", "priceDollars": 45, "numberOfMiniatures": 6, "strategyType": "Versatile", "theme": "Tech", "updateDate": "15/03/2016"}
+    { "manufacturer": "Corvus Belli", "univers": "Infinity", "faction": "PanOceania", "name": "PanOceania Starter Pack", "priceDollars": 45, "numberOfMiniatures": 6, "strategyType": "Versatile", "theme": "Tech", "updateDate": "15/03/2016"}
 ]
