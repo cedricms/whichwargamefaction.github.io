@@ -1,8 +1,47 @@
+<!DOCTYPE html>
+
 <html>
-  <head>
-    <title>Which wargame faction?</title>
-  </head>
-  <body>
-    Coming soon to help you get into the hobby!
-  </body>
+<head>
+  <title>Which wargame faction?</title>
+
+  <link rel="stylesheet" href="styles.css">
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+</head>
+
+<body ng-app="wargameApp">
+  <div ng-controller="ArmyController">
+    <form class="form-inline">
+      <input ng-model="searchText" type="text"
+        placeholder="Filter by" autofocus>
+    </form>
+    
+    <table>
+      <tr>
+        <th>Manufacturer</th>
+        <th>Univers</th>
+        <th>Faction</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Number of Miniatures</th>
+        <th>Price per Miniature</th>
+        <th>Strategy Type</th>
+        <th>Theme</th>
+      </tr>
+      <tr ng-repeat="army in armies | filter: searchText | orderBy: ['manufacturer', 'univers', 'faction', 'name'] ">
+        <td>{{ army.manufacturer }}</td>
+        <td>{{ army.univers }}</td>
+        <td>{{ army.faction }}</td>
+        <td>{{ army.name }}</td>
+        <td>${{ army.priceDollars }}</td>
+        <td>{{ army.numberOfMiniatures }}</td>
+        <td>${{ army.priceDollars / army.numberOfMiniatures | number: 2 }}</td>
+        <td>{{ army.strategyType }}</td>
+        <td>{{ army.theme }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="./js/main.js"></script> 
+</body>
 </html>
