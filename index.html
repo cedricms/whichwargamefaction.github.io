@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 
 <html>
-<head>
+<head>  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <title>Which wargame faction?</title>
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
   <!--[if lt IE 9]>
@@ -17,35 +25,59 @@
 <body ng-app="wargameApp">
   <a class="github-fork-ribbon" href="https://github.com/whichwargamefaction/whichwargamefaction.github.io" title="Fork me on GitHub">Fork me on GitHub</a>
   <div ng-controller="ArmyController">
-    <form class="form-inline">
-      <input ng-model="searchText" type="text"
-        placeholder="Filter by" autofocus>
-    </form>
+    <!-- Menu -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href=".">Which wargame faction?</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://getbootstrap.com/examples/dashboard/#">Dashboard</a></li>
+            <li><a href="http://getbootstrap.com/examples/dashboard/#">Settings</a></li>
+            <li><a href="http://getbootstrap.com/examples/dashboard/#">Profile</a></li>
+            <li><a href="http://getbootstrap.com/examples/dashboard/#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input class="form-control" ng-model="searchText" type="text" placeholder="Search..." autofocus>
+          </form>
+        </div>
+      </div>
+    </nav>
     
-    <table>
-      <tr>
-        <th>Manufacturer</th>
-        <th>Univers</th>
-        <th>Faction</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Number of Miniatures</th>
-        <th>Price per Miniature</th>
-        <th>Strategy Type</th>
-        <th>Theme</th>
-      </tr>
-      <tr ng-repeat="army in armies | filter: searchText | orderBy: ['manufacturer', 'univers', 'faction', 'name'] ">
-        <td>{{ army.manufacturer }}</td>
-        <td>{{ army.univers }}</td>
-        <td>{{ army.faction }}</td>
-        <td>{{ army.name }}</td>
-        <td>${{ army.priceDollars }}</td>
-        <td>{{ army.numberOfMiniatures }}</td>
-        <td>${{ army.priceDollars / army.numberOfMiniatures | number: 2 }}</td>
-        <td>{{ army.strategyType }}</td>
-        <td>{{ army.theme }}</td>
-      </tr>
-    </table>
+    <! -- Armies -->
+    <div class="container-fluid">
+      <table class="table table-hover table-striped">
+        <tr>
+          <th>Manufacturer</th>
+          <th>Univers</th>
+          <th>Faction</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Number of Miniatures</th>
+          <th>Price per Miniature</th>
+          <th>Strategy Type</th>
+          <th>Theme</th>
+        </tr>
+        <tr ng-repeat="army in armies | filter: searchText | orderBy: ['manufacturer', 'univers', 'faction', 'name'] ">
+          <td>{{ army.manufacturer }}</td>
+          <td>{{ army.univers }}</td>
+          <td>{{ army.faction }}</td>
+          <td>{{ army.name }}</td>
+          <td>${{ army.priceDollars }}</td>
+          <td>{{ army.numberOfMiniatures }}</td>
+          <td>${{ army.priceDollars / army.numberOfMiniatures | number: 2 }}</td>
+          <td>{{ army.strategyType }}</td>
+          <td>{{ army.theme }}</td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <script src="./js/main.js"></script> 
