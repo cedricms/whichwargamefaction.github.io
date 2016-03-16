@@ -4,5 +4,6 @@ A tool to help people choose their wargame faction and get started out in the ho
 ## Contributors
 Contributors who want to add starter army references just need to:
 * Fork the repository;
-* Update "./js/json/armies.json";
+* branch to the "develop" branch;
+* Update "./js/json/armies.json" accordingly;
 * Send a pull request.
