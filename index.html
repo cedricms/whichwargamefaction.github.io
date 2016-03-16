@@ -49,6 +49,7 @@
     
     <!-- An ugly hack to show the table headers -->
     <br/>
+    <br/>
     
     <! -- Armies -->
     <div class="container">
@@ -70,12 +71,12 @@
           <td>{{ army.univers }}</td>
           <td>{{ army.faction }}</td>
           <td>{{ army.name }}</td>
-          <td>${{ army.priceDollars }}</td>
-          <td>{{ army.numberOfMiniatures }}</td>
-          <td>${{ army.priceDollars / army.numberOfMiniatures | number: 2 }}</td>
+          <td class="align-right">${{ army.priceDollars }}</td>
+          <td class="align-right">{{ army.numberOfMiniatures }}</td>
+          <td class="align-right">${{ army.priceDollars / army.numberOfMiniatures | number: 2 }}</td>
           <td>{{ army.strategyType }}</td>
           <td>{{ army.theme }}</td>
-          <td>{{ army.updateDate }}</td>
+          <td class="align-right">{{ army.updateDate }}</td>
         </tr>
       </table>
     </div>
