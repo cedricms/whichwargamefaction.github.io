@@ -3,13 +3,19 @@
 <html>
 <head>
   <title>Which wargame faction?</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.ie.min.css" />
+  <![endif]-->
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
   
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 </head>
 
 <body ng-app="wargameApp">
+  <a class="github-fork-ribbon" href="https://github.com/whichwargamefaction/whichwargamefaction.github.io" title="Fork me on GitHub">Fork me on GitHub</a>
   <div ng-controller="ArmyController">
     <form class="form-inline">
       <input ng-model="searchText" type="text"
