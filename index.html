@@ -64,6 +64,7 @@
           <th>Price per Miniature</th>
           <th>Strategy Type</th>
           <th>Theme</th>
+          <th>Update date</th>
         </tr>
         <tr ng-repeat="army in armies | filter: searchText | orderBy: ['manufacturer', 'univers', 'faction', 'name'] ">
           <td>{{ army.manufacturer }}</td>
@@ -75,6 +76,7 @@
           <td>${{ army.priceDollars / army.numberOfMiniatures | number: 2 }}</td>
           <td>{{ army.strategyType }}</td>
           <td>{{ army.theme }}</td>
+          <td>{{ army.updateDate }}</td>
         </tr>
       </table>
     </div>
