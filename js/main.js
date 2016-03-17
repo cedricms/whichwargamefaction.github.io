@@ -16,6 +16,7 @@ app.config(function($translateProvider) {
     PRICE_PER_MINIATURES: 'Price per Miniature',
     STRATEGY_TYPE: 'Strategy Type',
     THEME: 'Theme',
+    ARMY_COLOURS: 'Faction Colours',
     UPDATE_DATE: 'Update date'
   })
   .translations('fr', {
@@ -32,6 +33,7 @@ app.config(function($translateProvider) {
     PRICE_PER_MINIATURES: 'Prix par Figurine',
     STRATEGY_TYPE: 'Type de Strategie',
     THEME: 'Thème',
+    ARMY_COLOURS: 'Couleurs de la Faction',
     UPDATE_DATE: 'Date de mise à jour'
   });
   
