@@ -1,6 +1,8 @@
 # whichwargamefaction.github.io
 A tool to help people choose their wargame faction and get started out in the hobby.
 
+The aim is to reference starter boxes in order to help futur players choose what best suits them.
+
 ## Contributors
 Contributors who want to add starter army references just need to:
 * Fork the repository;
