@@ -6,7 +6,7 @@ The aim is to reference starter boxes in order to help futur players choose what
 ## Contributors
 Contributors who want to add starter army references just need to:
 * Fork the repository;
-* branch to the "develop" branch;
+* Branch to the "develop" branch;
 * Update "./js/json/armies.json" accordingly;
 * Send a pull request.
 
