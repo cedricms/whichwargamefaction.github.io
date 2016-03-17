@@ -1,88 +1,90 @@
 <!DOCTYPE html>
 
 <html>
-<head>  
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <title>Which wargame faction is for you?</title>
-  
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <head>  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="./css/styles.css">
-  
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.10.0/angular-translate.min.js"></script>
-</head>
+    <title>Which wargame faction is for you?</title>
 
-<body ng-app="wargameApp">
-  <div ng-controller="ArmyController">
-    <!-- Menu -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.10.0/angular-translate.min.js"></script>
+  </head>
+
+  <body ng-app="wargameApp">
+    <div ng-controller="ArmyController">
+      <!-- Menu -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href=".">{{ 'WHICH_WARGAME_FACTION_IS_FOR_YOU' | translate }} (v0.0.3)</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <!--li><a href="http://getbootstrap.com/examples/dashboard/#">Dashboard</a></li>
+              <li><a href="http://getbootstrap.com/examples/dashboard/#">Settings</a></li>
+              <li><a href="http://getbootstrap.com/examples/dashboard/#">Profile</a></li-->
+              <li><a href="https://github.com/whichwargamefaction/whichwargamefaction.github.io" target="_blank" title="Fork me on GitHub">{{ 'CONTRIBUTE' | translate}}</a></li>
+              <li><a href=".">{{ 'ABOUT' | translate }}</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+              <input class="form-control" ng-model="searchText" type="text" placeholder="{{ 'SEARCH_INPUT' | translate }}" autofocus>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!-- An ugly hack to show the table headers -->
+      <br/>
+      <br/>
+
+      <! -- Armies -->
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href=".">{{ 'WHICH_WARGAME_FACTION_IS_FOR_YOU' | translate }} (v0.0.3)</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <!--li><a href="http://getbootstrap.com/examples/dashboard/#">Dashboard</a></li>
-            <li><a href="http://getbootstrap.com/examples/dashboard/#">Settings</a></li>
-            <li><a href="http://getbootstrap.com/examples/dashboard/#">Profile</a></li-->
-            <li><a href="https://github.com/whichwargamefaction/whichwargamefaction.github.io" target="_blank" title="Fork me on GitHub">{{ 'CONTRIBUTE' | translate}}</a></li>
-            <li><a href=".">{{ 'ABOUT' | translate }}</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input class="form-control" ng-model="searchText" type="text" placeholder="{{ 'SEARCH_INPUT' | translate }}" autofocus>
-          </form>
-        </div>
+        <table class="table table-hover table-striped">
+          <tr>
+            <th>{{ 'MANUFACTURER' | translate }}</th>
+            <th>{{ 'UNIVERS' | translate }}</th>
+            <th>{{ 'FACTION' | translate }}</th>
+            <th>{{ 'NAME' | translate }}</th>
+            <th>{{ 'PRICE' | translate }}</th>
+            <th>{{ 'NUMBER_OF_MINIATURES' | translate }}</th>
+            <th>{{ 'PRICE_PER_MINIATURES' | translate }}</th>
+            <th>{{ 'STRATEGY_TYPE' | translate }}</th>
+            <th>{{ 'THEME' | translate }}</th>
+            <th>{{ 'ARMY_COLOURS' | translate }}</th>
+            <th>{{ 'UPDATE_DATE' | translate }}</th>
+          </tr>
+          <tr ng-repeat="army in armies | filter: searchText | orderBy: ['manufacturer', 'univers', 'faction', 'name'] ">
+            <td>{{ army.manufacturer }}</td>
+            <td>{{ army.univers }}</td>
+            <td>{{ army.faction }}</td>
+            <td>{{ army.name }}</td>
+            <td class="align-right">${{ army.priceDollars }}</td>
+            <td class="align-right">{{ army.numberOfMiniatures }}</td>
+            <td class="align-right">${{ army.priceDollars / army.numberOfMiniatures | number: 2 }}</td>
+            <td>{{ army.strategyType }}</td>
+            <td>{{ army.theme }}</td>
+            <td>{{ army.armyColours }}</td>
+            <td class="align-right">{{ army.updateDate }}</td>
+          </tr>
+        </table>
       </div>
-    </nav>
-    
-    <!-- An ugly hack to show the table headers -->
-    <br/>
-    <br/>
-    
-    <! -- Armies -->
-    <div class="container">
-      <table class="table table-hover table-striped">
-        <tr>
-          <th>{{ 'MANUFACTURER' | translate }}</th>
-          <th>{{ 'UNIVERS' | translate }}</th>
-          <th>{{ 'FACTION' | translate }}</th>
-          <th>{{ 'NAME' | translate }}</th>
-          <th>{{ 'PRICE' | translate }}</th>
-          <th>{{ 'NUMBER_OF_MINIATURES' | translate }}</th>
-          <th>{{ 'PRICE_PER_MINIATURES' | translate }}</th>
-          <th>{{ 'STRATEGY_TYPE' | translate }}</th>
-          <th>{{ 'THEME' | translate }}</th>
-          <th>{{ 'UPDATE_DATE' | translate }}</th>
-        </tr>
-        <tr ng-repeat="army in armies | filter: searchText | orderBy: ['manufacturer', 'univers', 'faction', 'name'] ">
-          <td>{{ army.manufacturer }}</td>
-          <td>{{ army.univers }}</td>
-          <td>{{ army.faction }}</td>
-          <td>{{ army.name }}</td>
-          <td class="align-right">${{ army.priceDollars }}</td>
-          <td class="align-right">{{ army.numberOfMiniatures }}</td>
-          <td class="align-right">${{ army.priceDollars / army.numberOfMiniatures | number: 2 }}</td>
-          <td>{{ army.strategyType }}</td>
-          <td>{{ army.theme }}</td>
-          <td class="align-right">{{ army.updateDate }}</td>
-        </tr>
-      </table>
     </div>
-  </div>
 
-  <script src="./js/main.js"></script> 
-</body>
+    <script src="./js/main.js"></script> 
+  </body>
 </html>
