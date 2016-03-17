@@ -57,6 +57,9 @@ app.config(function($translateProvider) {
 });
 
 app.controller("ArmyController", function($scope, $http) {
+  $scope.sortType = ['manufacturer', 'univers', 'faction', 'name'];
+  $scope.sortReverse  = false;
+  
   $http.get('./js/json/armies.json')
        .then(function(response){
     $scope.armies = response.data;
